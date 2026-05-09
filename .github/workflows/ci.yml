@@ -29,11 +29,11 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Compilar y ejecutar tests
-        run: mvn test
+        run: mvn test -f TDD-Ciclo_Red_Green_Refactor/pom.xml
 
       - name: Publicar resultados de tests
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: resultados-tests
-          path: target/surefire-reports/
+          path: TDD-Ciclo_Red_Green_Refactor/target/surefire-reports/
